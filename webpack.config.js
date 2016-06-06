@@ -1,11 +1,14 @@
 require('babel/register');
-
+var path = require('path');
 var getConfig = require('hjs-webpack');
+var webpack = require('webpack');
 var React = require('react');
 
-module.exports = getConfig({
+var config = getConfig({
 	in: 'src/app.js',
 	out: 'public',
 	clearBeforeBuild: true
 });
+
+module.exports = config;
 

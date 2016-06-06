@@ -1,2 +1,2 @@
 var cmd = require('node-cmd');
-cmd.run('git add --all && git commit -m \"$(date)\" && git push && npm start')
+cmd.run('git add --all && git commit -m \"$(date)\" && git push')

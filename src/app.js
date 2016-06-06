@@ -1,5 +1,5 @@
 import Router from './routes';
-// import styles from './styles/main.styl';
+import styles from './styles/main.scss';
 
 window.app = {
 	init() {

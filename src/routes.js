@@ -1,5 +1,6 @@
+import 'babel-polyfill';
 import React from 'react';
-import ReactDOM from 'react-dom';
+import ReactDOM, {render} from 'react-dom';
 import Router from 'ampersand-router';
 import HomePage from './pages/home';
 
@@ -8,9 +9,11 @@ export default Router.extend({
 		'': 'home'
 	},
 	renderPage(page, opts = { layout: true }) {
-		ReactDOM.render(page, document.body)
+		render(page, document.body)
 	},
 	home() {
 		this.renderPage(<HomePage/>, { layout: false })
 	}
 });
+
+
