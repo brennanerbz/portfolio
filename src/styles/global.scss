@@ -54,6 +54,7 @@ body {
     }
   }
   a {
+    text-decoration: none;
     &:hover {
       cursor: pointer;
     }
@@ -68,4 +69,17 @@ body {
   background: #FFFFFF;
   border: 1px solid #D8DBE1;
   padding: 10px 0;
+}
+
+
+/* ===============
+   BORDER SETTINGS 
+   =============== */
+.border {
+  &.bb {
+    border-bottom: 2px solid;
+  }
+  &.br {
+    border-color: #EC342F;
+  }
 }

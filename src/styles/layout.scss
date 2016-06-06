@@ -34,6 +34,20 @@
 /* ===============
    PADDING SETTINGS 
    =============== */
+.padding-tiny {
+	&.pt {
+		padding-top: 0.5em;
+	}
+	&.pb {
+		padding-bottom: 0.5em;
+	}
+	&.pr {
+		padding-right: 0.5em;
+	}
+	&.pl {
+		padding-left: 0.5em;
+	}
+}
 .padding-small {
 	&.pt {
 		padding-top: 1em;
@@ -80,6 +94,20 @@
 /* ===============
    MARGIN SETTINGS 
    =============== */
+.margin-tiny {
+	&.mt {
+		margin-top: 0.5em;
+	}
+	&.mb {
+		margin-bottom: 0.5em;
+	}
+	&.mr {
+		margin-right: 0.5em;
+	}
+	&.ml {
+		margin-left: 0.5em;
+	}
+}
 .margin-small {
 	&.mt {
 		margin-top: 1em;

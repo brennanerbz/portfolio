@@ -1,6 +1,7 @@
 /* ===============
    COLORS 
    =============== */
+$black: #333333;
 $grey: #ADADAD;
 $twitter: #23CBFF;
 $github: #4E433B;
@@ -9,6 +10,9 @@ $instagram: #EC4989;
 /* ===============
    PRIMARY COLOR RULES 
    =============== */
+.black {
+	color: $black;
+}
 .grey {
 	color: $grey;
 }
