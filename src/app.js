@@ -11,6 +11,7 @@ require('./styles/global.scss');
 require('./styles/layout.scss');
 require('./styles/nav.scss');
 require('./styles/footer.scss');
+require('./styles/logo.scss');
 
 window.app = app;
 

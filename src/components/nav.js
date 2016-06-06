@@ -1,5 +1,6 @@
 import React  from 'react';
 import app from 'ampersand-app';
+import Logo from './logo';
 import Link from './link';
 
 export default React.createClass({
@@ -30,6 +31,7 @@ export default React.createClass({
 			<nav className="nav">
 				<div className="container group">
 					<div className="float-left nav-logo">
+						<Logo/>
 					</div>
 					<div className="float-right nav-links">
 						<ul className="links flat margin-small mr">
