@@ -34,11 +34,13 @@
     "private": "^0.1.6",
     "qs": "^6.2.0",
     "react": "^15.1.0",
+    "react-dom": "^15.1.0",
     "react-hot-loader": "^1.3.0",
     "scripts": "^0.1.0",
     "slugger": "^1.0.1",
     "standard": "^7.1.2",
     "style-loader": "^0.13.1",
+    "stylus": "^0.54.5",
     "stylus-loader": "^2.1.0",
     "surge": "^0.18.0",
     "url-loader": "^0.5.7",
@@ -48,11 +50,18 @@
     "xhr": "^2.2.0",
     "yeticss": "^7.3.0"
   },
-  "private": false,
   "scripts": {
     "build": "webpack",
     "deploy": "surge -p public -d labelr.surge.sh",
     "start": "webpack-dev-server",
+    "save": "git add --all && git commit -m \"$(date)\" && git push && npm start",
     "yolo": "git add --all && git commit -am \"$(date)\" && npm version minor && git push origin master --tags && npm run build && npm run deploy"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.9.0",
+    "babel-preset-es2015": "^6.9.0",
+    "babel-preset-react": "^6.5.0",
+    "babel-preset-react-hmre": "^1.1.1",
+    "react-hot-loader": "^1.3.0"
   }
 }
