@@ -1,7 +1,6 @@
 require('babel/register');
 var path = require('path');
 var getConfig = require('hjs-webpack');
-var webpack = require('webpack');
 var React = require('react');
 
 var config = getConfig({
