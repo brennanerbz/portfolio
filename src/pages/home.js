@@ -1,14 +1,15 @@
 import React  from 'react';
 
 export default React.createClass({
-	displayName: 'home',
+	displayName: 'Home',
 
 	render() {
 		return(
 			<div>
-				<div className="class">
+				<div className="body">
+					<button className="octicon octicon-pencil"></button>
 				</div>
 			</div>
 		);
 	}
-});
+});	
