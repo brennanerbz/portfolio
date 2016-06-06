@@ -1,0 +1,71 @@
+/* ===============
+   FONTS
+   =============== */
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,300,700|Lato:400,300,900);
+
+
+/* ===============
+   VARIABLES
+   =============== */
+$font-stack: "Open Sans", Helvetica, sans-serif;
+
+
+/* ===============
+   GLOBAL SETTINGS 
+   =============== */
+* {
+	box-sizing: border-box;
+}
+body {
+	background: #E9EBEE;
+  font-family: $font-stack;
+}
+
+
+/* ===============
+   SELF-CLEAR CHILDREN A.K.A. CLEARFIX 
+   =============== */
+.group:before,
+.group:after {
+    content: "";
+    display: table;
+} 
+.group:after {
+    clear: both;
+}
+.group {
+    zoom: 1; /* For IE 6/7 (trigger hasLayout) */
+}
+
+
+/* ===============
+   LINK SETTINGS 
+   =============== */
+.links {
+  text-decoration: none;
+  &.flat {
+    li {
+      display: inline;
+    }
+  }
+  &.up {
+    li {
+      display: block;
+    }
+  }
+  a {
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}
+
+/* ===============
+   NAV & FOOTER SETTINGS 
+   =============== */
+.nav, .footer {
+  width: 100%;
+  background: #FFFFFF;
+  border: 1px solid #D8DBE1;
+  padding: 10px 0;
+}

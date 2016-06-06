@@ -1,0 +1,124 @@
+/* ===============
+   LAYOUT SETTINGS 
+   =============== */
+  
+/* ===============
+   CONTAINER SETTINGS 
+   =============== */
+.container {
+	margin-left: auto;
+	margin-right: auto;
+	@media screen and (min-width: 320px) {
+		width: 100%;
+	}
+	@media screen and (min-width: 768px) {
+		width: 100%;
+	}
+	@media screen and (min-width: 1224px) {
+		width: 980px;
+	}
+}
+
+
+/* ===============
+   FLOAT SETTINGS 
+   =============== */ 
+.float-left {
+	float: left;
+}
+.float-right {
+	float: right;
+}
+
+
+/* ===============
+   PADDING SETTINGS 
+   =============== */
+.padding-small {
+	&.pt {
+		padding-top: 1em;
+	}
+	&.pb {
+		padding-bottom: 1em;
+	}
+	&.pr {
+		padding-right: 1em;
+	}
+	&.pl {
+		padding-left: 1em;
+	}
+}
+.padding-med {
+	&.pt {
+		padding-top: 2em;
+	}
+	&.pb {
+		padding-bottom: 2em;
+	}
+	&.pr {
+		padding-right: 2em;
+	}
+	&.pl {
+		padding-left: 2em;
+	}
+}
+.padding-large {
+	&.p-top {
+		padding-top: 4em;
+	}
+	&.pb {
+		padding-bottom: 4em;
+	}
+	&.pr {
+		padding-right: 4em;
+	}
+	&.pl {
+		padding-left: 4em;
+	}
+}
+
+/* ===============
+   MARGIN SETTINGS 
+   =============== */
+.margin-small {
+	&.mt {
+		margin-top: 1em;
+	}
+	&.mb {
+		margin-bottom: 1em;
+	}
+	&.mr {
+		margin-right: 1em;
+	}
+	&.ml {
+		margin-left: 1em;
+	}
+}
+.margin-med {
+	&.mt {
+		margin-top: 2em;
+	}
+	&.mb {
+		margin-bottom: 2em;
+	}
+	&.mr {
+		margin-right: 2em;
+	}
+	&.ml {
+		margin-left: 2em;
+	}
+}
+.margin-large {
+	&.mt {
+		margin-top: 4em;
+	}
+	&.mb {
+		margin-bottom: 4em;
+	}
+	&.mr {
+		margin-right: 4em;
+	}
+	&.ml {
+		margin-left: 4em;
+	}
+}
