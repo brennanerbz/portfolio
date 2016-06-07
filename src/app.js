@@ -14,6 +14,7 @@ require('./styles/footer.scss');
 require('./styles/home.scss');
 require('./styles/logo.scss');
 require('./styles/card.scss');
+require('./styles/project.scss');
 
 window.app = app;
 

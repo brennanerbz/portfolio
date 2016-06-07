@@ -16,7 +16,13 @@ export default React.createClass({
 					<div className="group">
 						{
 							arr.map(function(item) {
-								return <Card/>
+								return (
+									<Card
+										project={{
+											name: 'nightly'
+										}}
+									/>
+								);
 							})
 						}
 					</div>

@@ -13,7 +13,7 @@ export default Router.extend({
 	routes: {
 		'': 'home',
 		'work': 'home',
-		'work/:project-name': 'project',
+		'work/:name': 'project',
 		'about': 'about',
 		'hire-me': 'hireMe'
 	},
@@ -30,8 +30,8 @@ export default Router.extend({
 	home() {
 		this.renderPage(<HomePage/>)
 	},
-	project() {
-		this.renderPage(<ProjectPage/>)
+	project(name) {
+		this.renderPage(<ProjectPage name={name}/>)
 	},
 	about() {
 		this.renderPage(<AboutPage/>)
