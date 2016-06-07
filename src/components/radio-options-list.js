@@ -35,9 +35,10 @@ export default React.createClass({
 					options && options.map((option, i) => {
 						return (
 							<RadioOption
+								key={i}
 								name={option.name}
 								value={option.value}
-								checked={checked === i}
+								isChecked={checked === i}
 								index={i}
 								handleChecked={this.handleChecked}
 							/>

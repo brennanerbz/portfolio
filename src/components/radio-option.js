@@ -6,7 +6,7 @@ export default React.createClass({
 	render() {
 		const { name } = this.props;
 		const { value } = this.props;
-		const { checked } = this.props;
+		const { isChecked } = this.props;
 		const { index } = this.props;
 		return(
 			<span 
@@ -14,12 +14,13 @@ export default React.createClass({
 				className="option margin-med mr pointer">
 				<input 
 					className="pointer"
-					checked={checked}
+					onChange={() => {}}
+					checked={isChecked}
 					type="radio" 
 					name={name}
 					value={value}/>
 				<label 
-					className={`radio-label padding-tiny pl pointer ${checked ? 'black' : 'grey'}`} 
+					className={`radio-label padding-tiny pl pointer ${isChecked ? 'black' : 'grey'}`} 
 					htmlFo={name}>
 				{value}
 				</label>

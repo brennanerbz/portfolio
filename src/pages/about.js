@@ -34,9 +34,9 @@ export default React.createClass({
 							</div>
 							<div className="about-pics margin-med mt padding-med pl pr group">
 								{
-									arr.map(function(item) {
+									arr.map(function(item, i) {
 										return (
-											<a className="card flex-third">
+											<a key={i} className="card flex-third">
 												{/* Instagram photos */}
 											</a>
 										);

@@ -37,8 +37,8 @@ export default React.createClass({
 					Categories
 				</h1>
 				<ul className="links up no-padding no-margin">
-					{categories.map((item) => {
-						return <CategoryListItem item={item}/>
+					{categories.map((item, i) => {
+						return <CategoryListItem key={i} item={item}/>
 					})}
 				</ul>
 			</div>
