@@ -15,7 +15,10 @@ require('./styles/footer.scss');
 require('./styles/home.scss');
 require('./styles/logo.scss');
 require('./styles/card.scss');
+require('./styles/button.scss');
+require('./styles/form.scss');
 require('./styles/project.scss');
+require('./styles/hire-me.scss');
 
 window.app = app;
 

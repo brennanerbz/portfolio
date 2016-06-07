@@ -1,0 +1,29 @@
+.form-input-label, .form-input {
+	display: block;
+}
+.form-input-label {
+	font-size: 14px;
+}
+.form-input, .form-area {
+	font-size: 15px;
+	width: 100%;
+	border-radius: 3px;
+	border: 1px solid #e8e8e8;
+	outline: none;
+	user-select: none;
+	text-decoration: none;
+	white-space: nowrap;
+	-webkit-appearance: none;
+	-webkit-tap-highlight-color: transparent;
+	&:hover {
+		border: 1px solid rgba(39,41,43,0.25);
+	}
+	&:focus {
+		border: 1px solid rgba(39,41,43,0.35);
+	}
+}
+.form-area {
+	resize: vertical;
+	min-height: 160px;
+}
+
