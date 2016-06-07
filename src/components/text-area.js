@@ -10,11 +10,12 @@ export default React.createClass({
 			<div className="text-area margin-small mt">
 				{	
 					label &&
-					<label className="form-input-label grey" for={name}>
+					<label className="form-input-label grey" htmlFor={name}>
 						{name}
 					</label>
 				}
 				<textarea 
+					required
 					type="text" 
 					name={name} 
 					className="form-area"/>

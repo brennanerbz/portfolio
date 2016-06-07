@@ -12,11 +12,12 @@ export default React.createClass({
 					label &&
 					<label 
 						className="form-input-label grey" 
-						for={name}>
+						htmlFor={name}>
 						{name}
 					</label>
 				}
 				<input 
+					required
 					type="text" name={name} 
 					className="form-input"/>
 			</div>

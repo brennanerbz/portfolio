@@ -20,7 +20,7 @@ export default React.createClass({
 					value={value}/>
 				<label 
 					className={`radio-label padding-tiny pl pointer ${checked ? 'black' : 'grey'}`} 
-					for={name}>
+					htmlFo={name}>
 				{value}
 				</label>
 			</span>
