@@ -18,7 +18,7 @@ export default React.createClass({
 				}
 				<input 
 					type="text" name={name} 
-					className="form-input padding-small pl pt pr pb"/>
+					className="form-input"/>
 			</div>
 		);
 	}

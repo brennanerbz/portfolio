@@ -17,7 +17,7 @@ export default React.createClass({
 				<textarea 
 					type="text" 
 					name={name} 
-					className="form-area padding-small pt pr pb pl"/>
+					className="form-area"/>
 			</div>
 		);
 	}

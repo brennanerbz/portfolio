@@ -13,6 +13,7 @@ require('./styles/layout.scss');
 require('./styles/nav.scss');
 require('./styles/footer.scss');
 require('./styles/home.scss');
+require('./styles/about.scss');
 require('./styles/logo.scss');
 require('./styles/card.scss');
 require('./styles/button.scss');

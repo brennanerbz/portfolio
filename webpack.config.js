@@ -8,15 +8,16 @@ var React = require('react');
 var config = getConfig({
 	in: 'src/app.js',
 	out: 'public',
-	clearBeforeBuild: true
+	clearBeforeBuild: true,
+	isDev: process.env.NODE_ENV !== 'production',
+	hostname: 'docbrown.local',
+	html: function (context) {
+	        return {
+	            '200.html': context.defaultTemplate(),
+	            'index.html': context.defaultTemplate()
+	        };
+    }
 });
-
-// config.module.loaders.push(
-// 	{
-// 	    test: /\.json$/,
-// 	    loader: 'json'
-// 	}
-// )
 
 module.exports = config;
 
