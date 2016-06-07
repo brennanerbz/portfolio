@@ -30,7 +30,7 @@ export default React.createClass({
 		return(
 			<nav className="nav">
 				<div className="container group">
-					<div className="float-left nav-logo">
+					<div className="float-left nav-logo margin-small ml">
 						<Logo/>
 					</div>
 					<div className="float-right nav-links">

@@ -8,7 +8,7 @@ var React = require('react');
 var config = getConfig({
 	in: 'src/app.js',
 	out: 'public',
-	clearBeforeBuild: true,
+	clearBeforeBuild: true
 });
 
 module.exports = config;
