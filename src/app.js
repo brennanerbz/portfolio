@@ -6,6 +6,7 @@ import icons from 'octicons/octicons/octicons.css';
    STYLES
    =============== */
 require('./styles/normalize.css');
+require('./styles/github-markdown.css');
 require('./styles/colors.scss');
 require('./styles/global.scss');
 require('./styles/layout.scss');

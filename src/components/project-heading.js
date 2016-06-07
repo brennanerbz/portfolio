@@ -10,7 +10,7 @@ export default React.createClass({
 					<span className="project-date grey">June 2, 2016 |</span>
 					<span className="reading-time red">&nbsp;3 min</span>
 				</p>
-				<h1 className="project-title block bold">
+				<h1 className="project-title block black bold">
 					Nightly
 				</h1>
 				<p className="project-slug grey">

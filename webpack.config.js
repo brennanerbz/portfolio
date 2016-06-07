@@ -11,5 +11,12 @@ var config = getConfig({
 	clearBeforeBuild: true
 });
 
+// config.module.loaders.push(
+// 	{
+// 	    test: /\.json$/,
+// 	    loader: 'json'
+// 	}
+// )
+
 module.exports = config;
 
