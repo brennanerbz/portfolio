@@ -19,6 +19,13 @@
 	}
 }
 
+/* ===============
+   BLOCK SETTINGS 
+   =============== */
+.block {
+	display: block;
+}
+
 
 /* ===============
    FLOAT SETTINGS 
@@ -35,20 +42,20 @@
    PADDING SETTINGS 
    =============== */
 .no-padding {
-	padding: 0;
+	padding: 0!important;
 }
 .padding-tiny {
 	&.pt {
-		padding-top: 0.5em;
+		padding-top: 0.25em;
 	}
 	&.pb {
-		padding-bottom: 0.5em;
+		padding-bottom: 0.25em;
 	}
 	&.pr {
-		padding-right: 0.5em;
+		padding-right: 0.25em;
 	}
 	&.pl {
-		padding-left: 0.5em;
+		padding-left: 0.25em;
 	}
 }
 .padding-small {
@@ -98,20 +105,20 @@
    MARGIN SETTINGS 
    =============== */
 .no-margin {
-	margin: 0;
+	margin: 0!important;
 }
 .margin-tiny {
 	&.mt {
-		margin-top: 0.5em;
+		margin-top: 0.25em;
 	}
 	&.mb {
-		margin-bottom: 0.5em;
+		margin-bottom: 0.25em;
 	}
 	&.mr {
-		margin-right: 0.5em;
+		margin-right: 0.25em;
 	}
 	&.ml {
-		margin-left: 0.5em;
+		margin-left: 0.25em;
 	}
 }
 .margin-small {
@@ -156,3 +163,67 @@
 		margin-left: 4em;
 	}
 }
+
+
+
+/* ===============
+   COLUMNS SETTINGS 
+   =============== */
+.span-1-of-2 {
+	width: 50%;
+}
+.span-1-of-3 {
+	width: 32%;
+}
+.span-2-of-3 {
+	width: 77%;
+}
+.span-1-of-4 {
+	width: 23.8%;
+}
+.span-3-of-4 {
+	width: 74.6%;
+}
+.col {
+	float: left;
+	display: block;
+	margin: 0 0 2%;
+	padding-right: 2%;
+	+.col {
+		margin-left: 1.6%;
+	}
+	@media screen and (max-width: 748px) {
+		width: 100%;
+		margin: 0 0 2%;
+		padding-right: 0;
+		+.col {
+			margin-left: 0;
+		}
+	}
+}
+.flex-third {
+	float: left;
+	width: calc(33% - 10px);
+	margin: 10px 5px 0;
+	@media screen and (max-width: 640px) {
+		float: none;
+		width: 100%;
+	}
+}
+
+
+/* ===============
+   HIDE_ON_MOBILE SETTINGS 
+   =============== */
+.hide-on-mobile {
+	@media screen and (max-width: 748px) {
+		display: none;
+	}
+}
+
+
+
+
+
+
+
