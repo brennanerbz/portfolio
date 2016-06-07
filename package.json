@@ -2,6 +2,7 @@
   "name": "portfolio",
   "version": "0.0.1",
   "dependencies": {
+    "@insidersbyte/react-markdown-editor": "^0.3.0",
     "ampersand-app": "^2.0.0",
     "ampersand-model": "^8.0.0",
     "ampersand-react-mixin": "^1.0.1",

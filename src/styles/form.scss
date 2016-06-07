@@ -1,10 +1,14 @@
+/* ===============
+   FORM SETTINGS 
+   =============== */
+
 .form-input-label, .form-input {
 	display: block;
 }
 .form-input-label {
 	font-size: 14px;
 }
-.form-input, .form-area {
+.form-input, .form-area, .markdown-editor__textarea {
 	font-size: 15px;
 	width: 100%;
 	border-radius: 3px;
@@ -26,5 +30,15 @@
 .form-area {
 	resize: vertical;
 	min-height: 140px;
+}
+
+.markdown-editor__textarea {
+	resize: vertical;
+	min-height: 200px;
+}
+
+.markdown-editor__preview-container,
+.markdown-editor__editor-container h2 {
+	display: none;
 }
 

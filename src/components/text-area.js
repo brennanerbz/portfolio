@@ -4,6 +4,7 @@ export default React.createClass({
 	displayName: 'TextArea',
 
 	render() {
+		const { size } = this.props || 140;
 		const { label } = this.props || false;
 		const { name } = this.props;
 		return(
@@ -16,6 +17,7 @@ export default React.createClass({
 				}
 				<textarea 
 					required
+					style={{minHeight: size}}
 					type="text" 
 					name={name} 
 					className="form-area"/>
