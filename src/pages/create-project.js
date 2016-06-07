@@ -1,5 +1,6 @@
 import React  from 'react';
 import TextInput from '../components/text-input';
+import FileInput from '../components/file-input';
 import TextArea from '../components/text-area';
 import MarkdownEditor from '@insidersbyte/react-markdown-editor';
 import ProjectMarkdown from '../components/project-markdown';
@@ -9,6 +10,10 @@ export default React.createClass({
 
 	getInitialState() {
 		return {
+			date: '', 
+			name: '',
+			slug: '',
+			coverPhoto: '',
 			markdown: ''
 		}
 	},
@@ -20,6 +25,11 @@ export default React.createClass({
 				url: null // s3 file location
 			})
 		})
+	},
+
+	uploadImage(file) {
+		// upload file to s3 and upon success, set the state
+		console.log(file)
 	},
 
 	updateMarkdown(event) {
@@ -41,6 +51,17 @@ export default React.createClass({
 								<TextInput label={true} name="Date"/>
 								<TextInput label={true} name="Name"/>
 								<TextInput label={true} name="Slug"/>
+
+								{/* Cover Photo */}
+								<label 
+									className="form-input-label grey margin-small mt" 
+									htmlFor={"cover-photo"}>
+									Cover Photo
+								</label>
+								<FileInput 
+									className="custom-file-input all-caps"
+									name="cover-photo" 
+									handleUpload={this.uploadImage}/>
 								
 								{/* Markdown Editor */}
 								<label 
