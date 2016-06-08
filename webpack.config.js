@@ -12,10 +12,9 @@ var config = getConfig({
 	isDev: process.env.NODE_ENV !== 'production',
 	hostname: 'docbrown.local',
 	html: function (context) {
-	        return {
-	            '200.html': context.defaultTemplate(),
-	            'index.html': context.defaultTemplate()
-	        };
+        return {
+            'index.html': context.defaultTemplate()
+        };
     }
 });
 

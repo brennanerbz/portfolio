@@ -25,7 +25,7 @@ export default Router.extend({
 				<Layout>
 					{page}
 				</Layout>, 
-				document.body
+				document.getElementById('root')
 			);
 		}
 	},
