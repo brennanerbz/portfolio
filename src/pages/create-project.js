@@ -45,13 +45,14 @@ export default React.createClass({
 				<div className="col span-1-of-2" style={{paddingRight: 0}}>
 					<div className="form-card margin-small mt mr mb ml">
 						<div className="form-body padding-small pt pr pb pl">
-							<h1 className="hire-message text-center no-margin no-padding">Create Project</h1>
-							<p className="text-center grey no-margin no-padding">Include as many images as possible</p>
 							<form className="hire-form padding-small pr pb pl">
 								<TextInput label={true} name="Date"/>
 								<TextInput label={true} name="Name"/>
 								<TextInput label={true} name="Slug"/>
 
+								{/* Tags */}
+								<TextInput label={true} name="Tags"/>
+								
 								{/* Cover Photo */}
 								<label 
 									className="form-input-label grey margin-small mt" 
@@ -59,7 +60,7 @@ export default React.createClass({
 									Cover Photo
 								</label>
 								<FileInput 
-									className="custom-file-input all-caps"
+									className="custom-file-input all-caps margin-tiny mt"
 									name="cover-photo" 
 									handleUpload={this.uploadImage}/>
 								
@@ -74,7 +75,7 @@ export default React.createClass({
 									onChange={this.updateMarkdown}
 									onImageDrop={this.onImageDrop}
 								/>
-						
+														
 								<button type="text" 
 								className="button big confirm bold all-caps margin-small mt">
 									Create Project

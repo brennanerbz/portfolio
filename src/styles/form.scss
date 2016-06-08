@@ -32,10 +32,10 @@
 	min-height: 140px;
 }
 
+
 /* ===============
    MARKDOWN SETTINGS 
    =============== */
-
 .markdown-editor__textarea {
 	resize: vertical;
 	min-height: 200px;
@@ -46,39 +46,46 @@
 	display: none;
 }
 
+
 /* ===============
    CUSTOM FILE INPUT SETTINGS 
    =============== */
-
 .custom-file-input {
   color: transparent;
+  border: none;
+  outline: none;
+  user-select: none;
+  -webkit-appearance: none;
+  -webkit-tap-highlight-color: transparent;
 }
 .custom-file-input::-webkit-file-upload-button {
   visibility: hidden;
 }
 .custom-file-input::before {
-  content: 'Select some files';
+  content: 'Upload a file';
   color: black;
   display: inline-block;
-  background: -webkit-linear-gradient(top, #f9f9f9, #e3e3e3);
-  border: 1px solid #999;
+  background: #f9f9f9;
+  border: 1px solid #e8e8e8;
   border-radius: 3px;
   padding: 5px 8px;
   outline: none;
   white-space: nowrap;
-  -webkit-user-select: none;
+  user-select: none;
   cursor: pointer;
   text-shadow: 1px 1px #fff;
   font-weight: 700;
   font-size: 10pt;
+  -webkit-appearance: none;
+  -webkit-tap-highlight-color: transparent;
 }
 .custom-file-input:hover::before {
-  border-color: black;
+  border-color: #e1e1e1;
 }
 .custom-file-input:active {
   outline: 0;
 }
 .custom-file-input:active::before {
-  background: -webkit-linear-gradient(top, #e3e3e3, #f9f9f9); 
+  background: #f9f9f9;
 }
 
