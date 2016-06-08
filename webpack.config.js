@@ -10,6 +10,7 @@ var config = getConfig({
 	out: 'public',
 	clearBeforeBuild: true,
 	isDev: process.env.NODE_ENV !== 'production',
+	port: 3000,
 	hostname: 'docbrown.local',
 	html: function (context) {
         return {

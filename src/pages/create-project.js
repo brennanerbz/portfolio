@@ -1,4 +1,6 @@
 import React  from 'react';
+import FileProcess from '../helpers/process-file';
+import axios from 'axios';
 import TextInput from '../components/text-input';
 import FileInput from '../components/file-input';
 import TextArea from '../components/text-area';
@@ -13,8 +15,10 @@ export default React.createClass({
 			date: '', 
 			name: '',
 			slug: '',
-			coverPhoto: '',
-			markdown: ''
+			markdown: '',
+			data_uri: null,
+			filename: '',
+			filetype: ''
 		}
 	},
 
@@ -27,9 +31,22 @@ export default React.createClass({
 		})
 	},
 
-	uploadImage(file) {
-		// upload file to s3 and upon success, set the state
-		console.log(file)
+	handleFile(event) {
+		var self = this;
+		const file = event.target.files[0];
+		FileProcess(file).then((result) => {
+			axios.put('http://localhost:8080/api/v1/s3', {
+				file: result,
+				filename: file.name,
+				filetype: file.type
+			})
+			.then(function(result) {
+				console.log(result)
+				self.setState({
+					data_uri: result.data.Location
+				});
+			})
+		})
 	},
 
 	updateMarkdown(event) {
@@ -52,18 +69,25 @@ export default React.createClass({
 
 								{/* Tags */}
 								<TextInput label={true} name="Tags"/>
-								
+
 								{/* Cover Photo */}
 								<label 
 									className="form-input-label grey margin-small mt" 
 									htmlFor={"cover-photo"}>
 									Cover Photo
 								</label>
+									
 								<FileInput 
 									className="custom-file-input all-caps margin-tiny mt"
 									name="cover-photo" 
-									handleUpload={this.uploadImage}/>
+									handleUpload={this.handleFile}/>
 								
+								{
+									this.state.data_uri
+									&&
+									<img src={this.state.data_uri}/>
+								}
+
 								{/* Markdown Editor */}
 								<label 
 									className="form-input-label grey margin-small mt" 
