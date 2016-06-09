@@ -86,7 +86,7 @@ export default React.createClass({
 		const { markdown } = this.state;
 		return(
 			<div className="container group">
-				<div className="col span-1-of-2" style={{paddingRight: 0}}>
+				<div style={{paddingRight: 0}}>
 					<div className="form-card margin-small mt mr mb ml">
 						<div className="form-body padding-small pt pr pb pl">
 							<form className="hire-form padding-small pr pb pl">
@@ -153,7 +153,7 @@ export default React.createClass({
 						</div>
 					</div>
 				</div>
-				<div className="col span-1-of-2 no-padding hide-on-mobile">
+				<div className="no-padding hide-on-mobile">
 					<div className="form-card margin-small mt mr mb ml">
 						<div className="form-body padding-small pt pr pb pl">
 							<ProjectMarkdown input={markdown}/>
