@@ -1,6 +1,7 @@
 import React  from 'react';
 import FileProcess from '../helpers/process-file';
 import axios from 'axios';
+import async from 'async';
 import TextInput from '../components/text-input';
 import FileInput from '../components/file-input';
 import TextArea from '../components/text-area';
@@ -22,18 +23,30 @@ export default React.createClass({
 		}
 	},
 
+
 	onImageDrop(file) {
+		var self = this;
 		return new Promise((resolve) => {
-			resolve({
-				file: null, // file name
-				url: null // s3 file location
+			return self.handleFile(file, resolve)
+		})
+		.then((result) => {
+			console.log(result)
+			return new Promise((resolve) => {
+				resolve({
+					filename: file.name,
+					url: result.data.Location
+				})
 			})
+		})
+		.then((res) => {
+			console.log(res)
+			return res;
 		})
 	},
 
-	handleFile(event) {
+	handleFile(event, cb) {
 		var self = this;
-		const file = event.target.files[0];
+		const file = event.name ? event : event.target.files[0];
 		FileProcess(file).then((result) => {
 			axios.put('http://localhost:8080/api/v1/s3', {
 				file: result,
@@ -41,7 +54,9 @@ export default React.createClass({
 				filetype: file.type
 			})
 			.then(function(result) {
-				console.log(result)
+				if(cb) {
+					return cb(result)
+				}
 				self.setState({
 					data_uri: result.data.Location
 				});

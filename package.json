@@ -8,6 +8,7 @@
     "ampersand-react-mixin": "^1.0.1",
     "ampersand-rest-collection": "^6.0.0",
     "ampersand-router": "^4.0.0",
+    "async": "^2.0.0-rc.6",
     "autoprefixer": "^6.3.6",
     "autoprefixer-core": "^6.0.1",
     "autoprefixer-stylus": "^0.9.3",
