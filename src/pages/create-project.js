@@ -43,7 +43,7 @@ export default React.createClass({
 		var self = this;
 		const file = event.name ? event : event.target.files[0];
 		FileProcess(file).then((result) => {
-			axios.put('http://localhost:8080/api/v1/s3', {
+			axios.put('http://localhost:5100/api/v1/s3', {
 				file: result,
 				filename: file.name,
 				filetype: file.type
