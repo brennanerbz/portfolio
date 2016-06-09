@@ -1,8 +1,8 @@
 var aws = require('aws-sdk');
 
 aws.config.update({
-    accessKeyId: 'AKIAJVDVAL5LZIYV7FEQ',
-    secretAccessKey: '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'
+    accessKeyId: process.env.S3_ID,
+    secretAccessKey: process.env.S3_KEY
 });
 
 aws.config.region = 'us-west-2';

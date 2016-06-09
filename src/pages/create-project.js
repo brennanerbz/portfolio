@@ -28,18 +28,14 @@ export default React.createClass({
 		var self = this;
 		return new Promise((resolve) => {
 			return self.handleFile(file, resolve)
-		})
-		.then((result) => {
-			console.log(result)
+		}).then((result) => {
 			return new Promise((resolve) => {
 				resolve({
 					filename: file.name,
 					url: result.data.Location
 				})
 			})
-		})
-		.then((res) => {
-			console.log(res)
+		}).then((res) => {
 			return res;
 		})
 	},
@@ -52,11 +48,8 @@ export default React.createClass({
 				file: result,
 				filename: file.name,
 				filetype: file.type
-			})
-			.then(function(result) {
-				if(cb) {
-					return cb(result)
-				}
+			}).then(function(result) {
+				if(cb) return cb(result)
 				self.setState({
 					data_uri: result.data.Location
 				});

@@ -27,10 +27,12 @@
     "cors": "^2.7.1",
     "css-loader": "^0.23.1",
     "dependencies": "0.0.1",
+    "envs": "^0.1.6",
     "eslint": "^2.11.1",
     "eslint-plugin-react": "^5.1.1",
     "express": "^4.13.4",
     "file-loader": "^0.8.5",
+    "foreman": "^1.4.1",
     "fs": "0.0.2",
     "hjs-webpack": "^8.2.0",
     "json-loader": "^0.5.4",
@@ -81,7 +83,7 @@
     "lint": "eslint src",
     "build": "webpack",
     "deploy": "surge -p public -d labelr.surge.sh",
-    "start": "webpack-dev-server & node api/server",
+    "start": "nf start && node api/server",
     "yolo": "git add --all && git commit -am \"$(date)\" && npm version minor && git push origin master --tags && npm run build && npm run deploy"
   },
   "devDependencies": {
