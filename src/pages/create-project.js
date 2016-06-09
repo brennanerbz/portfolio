@@ -23,7 +23,6 @@ export default React.createClass({
 		}
 	},
 
-
 	onImageDrop(file) {
 		var self = this;
 		return new Promise((resolve) => {

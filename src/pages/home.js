@@ -6,7 +6,8 @@ export default React.createClass({
 	displayName: 'Home',
 
 	render() {
-		const arr = new Array.from({length: 9});
+		// const arr = new Array.from({length: 9});
+		const arr = [1, 2, 4]
 		return(
 			<div className="container group">
 				<div className="col span-1-of-4 hide-on-mobile padding-small pl" style={{paddingRight: 0}}>

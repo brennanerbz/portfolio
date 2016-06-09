@@ -5,7 +5,8 @@ export default React.createClass({
 	displayName: 'About',
 
 	render() {
-		const arr = new Array.from({length: 3});
+		// const arr = new Array.from({length: 3});
+		const arr = [1, 2, 4]
 		return(
 			<div className="container">
 				<div style={{marginTop: '8em', marginBottom: '2em'}} 
