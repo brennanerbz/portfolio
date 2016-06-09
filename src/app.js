@@ -8,6 +8,7 @@ import icons from 'octicons/octicons/octicons.css';
 require('./styles/normalize.css');
 require('./styles/github-markdown.css');
 require('./styles/colors.scss');
+require('./styles/font.scss');
 require('./styles/global.scss');
 require('./styles/layout.scss');
 require('./styles/nav.scss');

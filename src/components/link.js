@@ -41,8 +41,13 @@ export default React.createClass({
 			<a className={className + ' ' + (active ? activeClass : idleClass)} 
 				href={to}
 				onClick={() => {
+
 					this.props.handleChangeRoute &&
 					this.props.handleChangeRoute(to)
+					
+					this.props.handleClick &&
+					this.props.handleClick()
+
 				}}>
 				{label}
 			</a>

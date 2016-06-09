@@ -1,14 +1,16 @@
 import React  from 'react';
 import app from 'ampersand-app';
 import Logo from './logo';
-import Link from './link';
+import DesktopNavLinks from '../components/desktop-nav-links';
+import CollapsingLinks from '../components/collapsing-link-list';
 
 export default React.createClass({
 	displayName: 'Nav',
 
 	getInitialState() {
 		return {
-			activeRoute: app.router.history.location.pathname
+			activeRoute: app.router.history.location.pathname,
+			navMenuOpen: false
 		}	
 	},
 
@@ -29,12 +31,6 @@ export default React.createClass({
 		}
 	},
 
-	changeRoute(pathname) {
-		// this.setState({
-		// 	activeRoute: pathname
-		// });
-	},
-
 	render() {
 		const { activeRoute } = this.state;
 		return(
@@ -44,40 +40,33 @@ export default React.createClass({
 						<Logo/>
 					</div>
 					<div className="float-right nav-links">
-						<ul className="links flat margin-small mr">
-							<li>
-								<Link 
-									className="margin-med mr padding-tiny pb"
-									label="Work" 
-									to="/" 
-									active={activeRoute === '/' || activeRoute.match(/work/g)}
-									idleClass="grey"
-									activeClass="black border bb br"
-									/>
-							</li>
-							<li>
-								<Link 
-									className="padding-tiny pb"
-									label="About" 
-									to="/about" 
-									active={activeRoute === '/about'}
-									idleClass="grey"
-									activeClass="black border bb br"
-									/>
-							</li>
-							<li>
-								<Link 
-									className="margin-med ml padding-tiny pb"
-									label="Hire Me" 
-									to="/hire-me" 
-									active={activeRoute === '/hire-me'}
-									idleClass="grey"
-									activeClass="black border bb br"
-									/>
-							</li>
-						</ul>
+						<DesktopNavLinks
+							activeRoute={activeRoute}
+						/>
+						<div 
+							onClick={() => this.setState({navMenuOpen: !this.state.navMenuOpen})}
+							className="show-on-mobile margin-small mr vertical-center-on-mobile">
+							<span 
+							style={{fontSize: '32px'}}
+							className="octicon octicon-three-bars">
+							</span>
+						</div>
 					</div>
 				</div>
+				{
+					this.state.navMenuOpen
+					&&
+					<div className="margin-small mt">
+						<CollapsingLinks
+							activeRoute={activeRoute}
+							links={['Work', 'About', 'Hire Me']}
+							className=""
+							activeClass="black bold"
+							idleClass="grey"
+							handleClick={() => this.setState({navMenuOpen: false})}
+						/>	
+					</div>
+				}
 			</nav>
 		);
 	}
