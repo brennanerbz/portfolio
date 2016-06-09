@@ -56,7 +56,7 @@ export default React.createClass({
 				{
 					this.state.navMenuOpen
 					&&
-					<div className="margin-small mt">
+					<div className="margin-small mt show-on-mobile">
 						<CollapsingLinks
 							activeRoute={activeRoute}
 							links={['Work', 'About', 'Hire Me']}
