@@ -25,7 +25,11 @@ exports.uploadFile = function(req, res) {
         ACL: 'public-read'
     };
 
-    s3.upload(params, function(err, data) {
+    var options = {
+        partSize: 10 * 1024 * 1024, queueSize: 1
+    };
+
+    s3.upload(params, options, function(err, data) {
         if (err) {
             res.send(err)
         } else {

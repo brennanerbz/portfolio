@@ -16,11 +16,31 @@ export default React.createClass({
 			date: '', 
 			name: '',
 			slug: '',
-			markdown: '',
 			data_uri: null,
 			filename: '',
-			filetype: ''
+			filetype: '',
+			markdown: '',
 		}
+	},
+
+	postProject(event) {
+		event.preventDefault();
+		const project = {
+			date: 		this.state.date,
+			name: 		this.state.name,
+			slug: 		this.state.slug,
+			tags: 		this.state.tags.split(','),
+			coverPhoto: this.state.data_uri,
+			markdown:   this.state.markdown
+		}
+		axios
+		.post('http://localhost:5100/api/v1/project', project)
+		.then(function(result) {
+			console.log(result)
+		})
+		.catch(function(err) {
+			console.error(err)
+		})
 	},
 
 	onImageDrop(file) {
