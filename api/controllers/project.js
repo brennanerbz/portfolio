@@ -18,14 +18,14 @@ exports.postProject = function(req, res) {
 };
 
 exports.getProjects = function(req, res) {
-	Project.where('_id').gte(0).exec(function(err, projects) {
+	Project.where('date').gte(0).exec(function(err, projects) {
 		if(err) res.send(err);
 		res.json(projects);
 	});
 };
 
 exports.getProject  = function(req, res) {
-	Project.findOne({_id: req.params.project_id}, function(err, project) {
+	Project.findOne({name: req.params.project_name}, function(err, project) {
 		if(err) res.send(err);
 		res.json(project)
 	})

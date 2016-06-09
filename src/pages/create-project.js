@@ -34,7 +34,7 @@ export default React.createClass({
 			markdown:   this.state.markdown
 		}
 		axios
-		.post('http://localhost:5100/api/v1/project', project)
+		.post('http://localhost:5100/api/v1/projects', project)
 		.then(function(result) {
 			console.log(result)
 		})
@@ -90,12 +90,28 @@ export default React.createClass({
 					<div className="form-card margin-small mt mr mb ml">
 						<div className="form-body padding-small pt pr pb pl">
 							<form className="hire-form padding-small pr pb pl">
-								<TextInput label={true} name="Date"/>
-								<TextInput label={true} name="Name"/>
-								<TextInput label={true} name="Slug"/>
+
+								<TextInput 
+									handleChange={(event) => {this.setState({date: event.target.value})}}
+									type="date"
+									label={true} 
+									name="Date"/>
+
+								<TextInput 
+									handleChange={(event) => this.setState({name: event.target.value})}
+									label={true} 
+									name="Name"/>
+
+								<TextInput 
+									handleChange={(event) => this.setState({slug: event.target.value})}
+									label={true} 
+									name="Slug"/>
 
 								{/* Tags */}
-								<TextInput label={true} name="Tags"/>
+								<TextInput 
+									handleChange={(event) => this.setState({tags: event.target.value})}
+									label={true} 
+									name="Tags"/>
 
 								{/* Cover Photo */}
 								<label 
@@ -103,7 +119,6 @@ export default React.createClass({
 									htmlFor={"cover-photo"}>
 									Cover Photo
 								</label>
-									
 								<FileInput 
 									className="custom-file-input all-caps margin-tiny mt"
 									name="cover-photo" 
@@ -127,10 +142,13 @@ export default React.createClass({
 									onImageDrop={this.onImageDrop}
 								/>
 														
-								<button type="text" 
-								className="button big confirm bold all-caps margin-small mt">
+								<button 
+									onClick={this.postProject}
+									type="text" 
+									className="button big confirm bold all-caps margin-small mt">
 									Create Project
 								</button>
+
 							</form>
 						</div>
 					</div>

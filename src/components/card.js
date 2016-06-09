@@ -14,8 +14,8 @@ export default React.createClass({
 				</div>
 				<div className="project-info">
 					<div className="padding-small pr pb pl">
-						<div className="project-name bold">Name</div>
-						<div className="project-info">Info</div>
+						<div className="project-name bold">{project.name}</div>
+						<div className="project-info">{project.slug}</div>
 					</div>
 				</div>
 			</a>

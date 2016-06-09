@@ -17,8 +17,10 @@ export default React.createClass({
 					</label>
 				}
 				<input 
+					onChange={this.props.handleChange}
 					required
-					type="text" name={name} 
+					type={this.props.type || 'text'}
+					name={name} 
 					className="form-input"/>
 			</div>
 		);

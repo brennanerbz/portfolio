@@ -1,13 +1,33 @@
 import React  from 'react';
+import axios from 'axios';
 import CategoryList  from '../components/category-list';
 import Card  from '../components/card';
 
 export default React.createClass({
 	displayName: 'Home',
 
+	getInitialState() {
+		return {
+			projects: []
+		}
+	},
+
+	componentDidMount() {
+		var self = this;
+		axios
+		.get('http://localhost:5100/api/v1/projects')
+		.then(function(result) {
+			self.setState({
+				projects: result.data
+			});
+		})
+		.catch(function(err) {
+			console.error(err)
+		})
+	},
+
 	render() {
-		// const arr = new Array.from({length: 9});
-		const arr = [1, 2, 4]
+		const { projects } = this.state;
 		return(
 			<div className="container group">
 				<div className="col span-1-of-4 hide-on-mobile padding-small pl" style={{paddingRight: 0}}>
@@ -16,13 +36,11 @@ export default React.createClass({
 				<div className="col span-3-of-4 no-padding">
 					<div className="group">
 						{
-							arr.map((item, i) => {
+							projects.map((project, i) => {
 								return (
 									<Card
 										key={i}
-										project={{
-											name: 'nightly'
-										}}
+										project={project}
 									/>
 								);
 							})

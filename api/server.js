@@ -31,7 +31,7 @@ router.route('/projects')
 	.post(project.postProject)
 	.get(project.getProjects);
 
-router.route('/projects/:project_id')
+router.route('/projects/:project_name')
 	.get(project.getProject)
 
 app.use('/api/v1', router);
