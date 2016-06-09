@@ -7,6 +7,7 @@ export default React.createClass({
 	render() {
 		const { links } = this.props;
 		const { activeRoute } = this.props;
+		const { menu } = this.props;
 		return(
 			<ul 
 				className="links up 
@@ -29,7 +30,9 @@ export default React.createClass({
 							<li 
 								key={i}
 								style={{
-									paddingBottom: (i === links.length - 1 ? '0.5em' : '')
+									paddingBottom: ((
+										menu === 'nav' 
+										&& i === links.length - 1) ? '0.5em' : '')
 								}}
 								className={'padding-small pt pl pb pr font-18' 
 										   + ' ' + (i !== 0 ? 'border bt bg' : '')}>
