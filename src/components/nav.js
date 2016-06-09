@@ -19,10 +19,20 @@ export default React.createClass({
 		});
 	},
 
+	componentWillReceiveProps(nextProps) {
+		const { activeRoute } = this.state;
+		const nextRoute = nextProps.router.history.location.pathname;
+		if(activeRoute !== nextRoute) {
+			this.setState({
+				activeRoute: nextRoute
+			});
+		}
+	},
+
 	changeRoute(pathname) {
-		this.setState({
-			activeRoute: pathname
-		});
+		// this.setState({
+		// 	activeRoute: pathname
+		// });
 	},
 
 	render() {
@@ -40,10 +50,10 @@ export default React.createClass({
 									className="margin-med mr padding-tiny pb"
 									label="Work" 
 									to="/" 
-									active={activeRoute === '/'}
+									active={activeRoute === '/' || activeRoute.match(/work/g)}
 									idleClass="grey"
 									activeClass="black border bb br"
-									handleChangeRoute={this.changeRoute}/>
+									/>
 							</li>
 							<li>
 								<Link 
@@ -53,7 +63,7 @@ export default React.createClass({
 									active={activeRoute === '/about'}
 									idleClass="grey"
 									activeClass="black border bb br"
-									handleChangeRoute={this.changeRoute}/>
+									/>
 							</li>
 							<li>
 								<Link 
@@ -63,7 +73,7 @@ export default React.createClass({
 									active={activeRoute === '/hire-me'}
 									idleClass="grey"
 									activeClass="black border bb br"
-									handleChangeRoute={this.changeRoute}/>
+									/>
 							</li>
 						</ul>
 					</div>

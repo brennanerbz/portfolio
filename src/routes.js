@@ -3,6 +3,7 @@ import React from 'react';
 import ReactDOM, {render} from 'react-dom';
 import Router from 'ampersand-router';
 
+import app from 'ampersand-app';
 import Layout from './layout';
 import HomePage from './pages/home';
 import ProjectPage from './pages/project';
@@ -22,7 +23,7 @@ export default Router.extend({
 	renderPage(page, opts = { layout: true }) {
 		if(opts.layout) {
 			render(
-				<Layout>
+				<Layout router={app.router}>
 					{page}
 				</Layout>, 
 				document.getElementById('root')

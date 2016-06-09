@@ -40,7 +40,10 @@ export default React.createClass({
 		return(
 			<a className={className + ' ' + (active ? activeClass : idleClass)} 
 				href={to}
-				onClick={() => this.props.handleChangeRoute(to)}>
+				onClick={() => {
+					this.props.handleChangeRoute &&
+					this.props.handleChangeRoute(to)
+				}}>
 				{label}
 			</a>
 		);

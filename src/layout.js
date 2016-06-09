@@ -7,9 +7,10 @@ export default React.createClass({
 	displayName: 'Layout',
 
 	render() {
+		const { router } = this.props;
 		return(
 			<NavHelper>
-				<Nav/>
+				<Nav router={router}/>
 				{this.props.children}
 				<Footer/>
 			</NavHelper>
