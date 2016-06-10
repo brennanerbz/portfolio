@@ -4,9 +4,18 @@ import Card  from '../components/card';
 export default React.createClass({
 	displayName: 'About',
 
+	getInitialState() {
+		return {
+			photos: [
+				'https://scontent-lax3-1.cdninstagram.com/t51.2885-15/e15/1173217_690825600942509_1234812613_n.jpg?ig_cache_key=NjAxNjc2Mzk2MjIyNTQ0MDU3.2',
+				'https://scontent-lax3-1.cdninstagram.com/t51.2885-15/e15/1690083_247937685389039_1950703556_n.jpg?ig_cache_key=NjQ1MDc2OTQ5OTgzODg2MTgz.2',
+				'https://scontent-lax3-1.cdninstagram.com/t51.2885-15/e15/11098302_802222803197204_2055629007_n.jpg?ig_cache_key=OTU3NDczOTkzODk5OTY1NDMx.2'
+			]
+		};
+	},
+
 	render() {
-		// const arr = new Array.from({length: 3});
-		const arr = [1, 2, 4]
+		const { photos } = this.state;
 		return(
 			<div className="container">
 				<div style={{marginTop: '8em', marginBottom: '2em'}} 
@@ -14,6 +23,7 @@ export default React.createClass({
 					<div className="about-body padding-med pt pr pb pl">
 						<div className="profile-pic-circle block">
 							<div className="profile-pic-img">
+								<img style={{width: '100%', borderRadius: '50%'}} src={'https://avatars2.githubusercontent.com/u/9124902?v=3&s=460'}/>
 							</div>
 						</div>
 						<div className="info margin-large mt text-center">
@@ -35,10 +45,10 @@ export default React.createClass({
 							</div>
 							<div className="about-pics margin-med mt padding-med pl pr group no-padding-on-mobile npl npr">
 								{
-									arr.map(function(item, i) {
+									photos.map(function(photo, i) {
 										return (
-											<a key={i} className="card flex-third">
-												{/* Instagram photos */}
+											<a key={i} className="flex-third">
+												<img style={{width: '100%'}} src={photo}/>
 											</a>
 										);
 									})
