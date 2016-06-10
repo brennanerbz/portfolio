@@ -6,6 +6,7 @@ export default React.createClass({
 
 	render() {
 		const { activeRoute } = this.props;
+		console.log(activeRoute)
 		return(
 			<ul className="links flat margin-small mr hide-on-mobile">
 				<li>
@@ -13,7 +14,7 @@ export default React.createClass({
 						className="margin-med mr padding-tiny pb"
 						label="Work" 
 						to="/" 
-						active={activeRoute === '/' || activeRoute.match(/work/g)}
+						active={activeRoute === '' || activeRoute.match(/work/g)}
 						idleClass="grey"
 						activeClass="black border bb br"
 						/>

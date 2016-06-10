@@ -9,13 +9,13 @@ export default React.createClass({
 
 	getInitialState() {
 		return {
-			activeRoute: app.router.history.location.pathname,
+			activeRoute: app.router.history.location.hash,
 			navMenuOpen: false
 		}	
 	},
 
 	componentDidMount() {
-		const pathname = app.router.history.location.pathname;
+		const pathname = app.router.history.location.hash;
 		this.setState({
 			activeRoute: pathname
 		});
@@ -23,7 +23,7 @@ export default React.createClass({
 
 	componentWillReceiveProps(nextProps) {
 		const { activeRoute } = this.state;
-		const nextRoute = nextProps.router.history.location.pathname;
+		const nextRoute = nextProps.router.history.location.hash;
 		if(activeRoute !== nextRoute) {
 			this.setState({
 				activeRoute: nextRoute,
@@ -42,7 +42,7 @@ export default React.createClass({
 					</div>
 					<div className="float-right nav-links">
 						<DesktopNavLinks
-							activeRoute={activeRoute}
+							activeRoute={activeRoute.replace('#', '/')}
 						/>
 						<div 
 							onClick={() => this.setState({navMenuOpen: !this.state.navMenuOpen})}
@@ -58,7 +58,7 @@ export default React.createClass({
 					&&
 					<div className="margin-small mt show-on-mobile">
 						<CollapsingLinks
-							activeRoute={activeRoute}
+							activeRoute={activeRoute.replace('#', '/')}
 							menu="nav"
 							links={['Work', 'About', 'Hire Me']}
 							className=""
