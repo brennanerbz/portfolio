@@ -272,7 +272,11 @@
 		}
 	}
 }
-
+.display-block-on-mobile {
+	@media screen and (max-width: 748px) {
+		display: block;
+	}
+}
 
 
 

@@ -11,7 +11,7 @@ export default React.createClass({
 		return(
 			<span 
 				onClick={() => this.props.handleChecked(index)}
-				className="option margin-med mr pointer">
+				className="option margin-med mr pointer display-block-on-mobile padding-small pt">
 				<input 
 					className="pointer"
 					onChange={() => {}}

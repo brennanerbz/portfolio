@@ -13,7 +13,7 @@ export default React.createClass({
 						</div>
 					</div>
 					<div className="float right not-on-mobile first center">
-						<ul className="links flat margin-small mr">
+						<ul className="links flat margin-small mr no-padding">
 							<li>
 								<a className="grey padding-small pr">
 									Email
