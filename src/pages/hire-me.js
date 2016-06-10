@@ -23,7 +23,7 @@ export default React.createClass({
 		const { options } = this.state;
 		return(
 			<div className="hire-me small-container">
-				<div className="form-card margin-small mt mr mb ml">
+				<div className="form-card margin-small mt mr mb ml no-margin-on-mobile nmr nml">
 					<div className="form-body padding-small pt pr pb pl">
 						<h1 className="hire-message text-center no-margin no-padding">Let's work together</h1>
 						<p className="text-center grey no-margin no-padding">I also cook cheeseburgers</p>

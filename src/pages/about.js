@@ -10,7 +10,7 @@ export default React.createClass({
 		return(
 			<div className="container">
 				<div style={{marginTop: '8em', marginBottom: '2em'}} 
-					className="about-content margin-small mt ml mr mb">
+					className="about-content margin-small mt ml mr mb no-margin-on-mobile nmr nml">
 					<div className="about-body padding-med pt pr pb pl">
 						<div className="profile-pic-circle block">
 							<div className="profile-pic-img">

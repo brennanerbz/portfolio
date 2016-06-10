@@ -6,7 +6,7 @@ export default React.createClass({
 	render() {
 		const { project } = this.props;
 		return(
-			<a href={`/work/${project.name}`} className="card flex-third">
+			<a href={`/work/${project.name}`} className="card flex-third no-underline">
 				<div className="project-img padding-small pt pr pb pl">
 					<div className="img-background">
 						
@@ -14,8 +14,8 @@ export default React.createClass({
 				</div>
 				<div className="project-info">
 					<div className="padding-small pr pb pl">
-						<div className="project-name bold">{project.name}</div>
-						<div className="project-info">{project.slug}</div>
+						<div className="project-name black bold">{project.name}</div>
+						<div className="project-info grey">{project.slug}</div>
 					</div>
 				</div>
 			</a>

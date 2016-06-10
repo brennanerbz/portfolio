@@ -32,7 +32,7 @@ export default React.createClass({
 		const { project } = this.state;
 		return(
 			<div className="container">
-				<div className="project-content margin-small mt ml mr mb">
+				<div className="project-content margin-small mt ml mr mb no-margin-on-mobile nmr nml">
 					<div className="project-body padding-med pt pr pb pl">
 						<ProjectHeading
 							project={project}

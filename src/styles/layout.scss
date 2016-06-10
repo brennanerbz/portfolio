@@ -238,6 +238,7 @@
 	@media screen and (max-width: 640px) {
 		float: none;
 		width: 100%;
+		margin: 10px 0;
 	}
 }
 
@@ -261,7 +262,16 @@
 		transform: translateY(25%);
 	}
 }
-
+.no-margin-on-mobile {
+	@media screen and (max-width: 748px) {
+		&.nml {
+			margin-left: 0;
+		}
+		&.nmr {
+			margin-right: 0;
+		}
+	}
+}
 
 
 

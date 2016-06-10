@@ -29,7 +29,7 @@ export default React.createClass({
 			date: 		this.state.date,
 			name: 		this.state.name,
 			slug: 		this.state.slug,
-			tags: 		this.state.tags.split(','),
+			tags: 		this.state.tags.split(',').map((tag) => { return tag.trim(); }),
 			coverPhoto: this.state.data_uri,
 			markdown:   this.state.markdown
 		}
@@ -87,7 +87,7 @@ export default React.createClass({
 		return(
 			<div className="container group">
 				<div style={{paddingRight: 0}}>
-					<div className="form-card margin-small mt mr mb ml">
+					<div className="form-card margin-small mt mr mb ml no-margin-on-mobile nmr nml">
 						<div className="form-body padding-small pt pr pb pl">
 							<form className="hire-form padding-small pr pb pl">
 

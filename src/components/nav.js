@@ -48,8 +48,7 @@ export default React.createClass({
 							onClick={() => this.setState({navMenuOpen: !this.state.navMenuOpen})}
 							className="show-on-mobile margin-small mr vertical-center-on-mobile pointer">
 							<span 
-							style={{fontSize: '32px'}}
-							className="octicon octicon-three-bars">
+							className="font-30 octicon octicon-three-bars">
 							</span>
 						</div>
 					</div>

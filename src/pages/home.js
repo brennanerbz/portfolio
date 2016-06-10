@@ -10,7 +10,27 @@ export default React.createClass({
 	getInitialState() {
 		return {
 			projects: [],
-			categoryMenuOpen: false
+			categoryMenuOpen: false,
+			categories: [
+				'Web Design',
+				'Web App Design',
+				'Interaction Design',
+				'Wireframes',
+				'Mobile Web',
+				'iOS Design',
+				'Android Design',
+				'Startup',
+				'Photography',
+				'Videography',
+				'Film',
+				'Music Video',
+				'Commercial',
+				'Front End Development',
+				'Back End Development',
+				'User Experience Design',
+				'Branding',
+				'Mobile Web Design'
+			]
 		}
 	},
 
@@ -49,7 +69,7 @@ export default React.createClass({
 							<CollapsingList
 								activeRoute={null}
 								menu="categories"
-								links={['one', 'two', 'three']}
+								links={this.state.categories}
 								className=""
 								activeClass="black bold"
 								idleClass="grey"
@@ -65,7 +85,7 @@ export default React.createClass({
 					</div>
 				</div>
 				<div className="col span-1-of-4 hide-on-mobile padding-small pl" style={{paddingRight: 0}}>
-					<CategoryList/>
+					<CategoryList categories={this.state.categories}/>
 				</div>
 				<div className="col span-3-of-4 no-padding">
 					<div className="group">
