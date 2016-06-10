@@ -270,6 +270,28 @@
 		&.nmr {
 			margin-right: 0;
 		}
+		&.nmt {
+			margin-top: 0;
+		}
+		&.nmb {
+			margin-bottom: 0;
+		}
+	}
+}
+.no-padding-on-mobile {
+	@media screen and (max-width: 748px) {
+		&.npl {
+			padding-left: 0;
+		}
+		&.npr {
+			padding-right: 0;
+		}
+		&.npt {
+			padding-top: 0;
+		}
+		&.npb {
+			padding-bottom: 0;
+		}
 	}
 }
 .display-block-on-mobile {

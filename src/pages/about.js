@@ -19,7 +19,7 @@ export default React.createClass({
 						<div className="info margin-large mt text-center">
 							<h1 className="name black bold no-margin">Brennan Erbeznik</h1>
 							<h3 className="title grey no-margin">Front End / UX Engineer</h3>
-							<div className="about-bio margin-med mt padding-med pl pr">
+							<div className="about-bio margin-med mt padding-med pl pr no-padding-on-mobile npl npr">
 								<p className="about-info">
 									I'm a husband, dad and designer living in Orange County California. You can find me on Dribbble, Twitter, Instagram and LinkedIn if you'd like. I do enjoy taking a good photo or two. I've led design at multiple startups since 2009. 
 								</p>
@@ -33,7 +33,7 @@ export default React.createClass({
 									I love design, business strategy and product.
 								</p>
 							</div>
-							<div className="about-pics margin-med mt padding-med pl pr group">
+							<div className="about-pics margin-med mt padding-med pl pr group no-padding-on-mobile npl npr">
 								{
 									arr.map(function(item, i) {
 										return (
