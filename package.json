@@ -82,6 +82,7 @@
     "xhr": "^2.2.0",
     "yeticss": "^7.3.0"
   },
+  "main": "index.js",
   "scripts": {
     "client": "webpack-dev-server",
     "api": "nodemon api/server",
@@ -107,5 +108,8 @@
     "react-hot-loader": "^1.3.0",
     "webpack": "^1.12.2",
     "webpack-dev-server": "^1.12.1"
-  }
+  },
+  "engines": {
+      "node": "6.0.0"
+    }
 }
