@@ -1,7 +1,7 @@
 /* ===============
    FONTS
    =============== */
-@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,300,700|Lato:400,300,900);
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700|Lato:400,300,900);
 
 
 /* ===============
@@ -95,22 +95,20 @@ body {
 
 
 /* ===============
-   FONT SETTINGS 
-   =============== */
-.bold {
-  font-weight: 700;
-}
-.all-caps {
-  text-transform: uppercase;
-}
-.text-center {
-  text-align: center;
-}
-
-
-/* ===============
    HOVER AND CLICK SETTINGS 
    =============== */
 .pointer {
   cursor: pointer;
+}
+.no-user-select {
+  user-select: none;
+  text-decoration: none;
+  white-space: nowrap;
+  -webkit-appearance: none;
+  -webkit-tap-highlight-color: transparent;
+}
+.hover-bg-light {
+  &:hover {
+    background: #fafafa;
+  }
 }

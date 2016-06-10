@@ -1,8 +1,8 @@
 import React  from 'react';
 import app from 'ampersand-app';
 import Logo from './logo';
-import DesktopNavLinks from '../components/desktop-nav-links';
-import CollapsingLinks from '../components/collapsing-link-list';
+import DesktopNavLinks from './desktop-nav-links';
+import CollapsingLinks from './collapsing-link-list';
 
 export default React.createClass({
 	displayName: 'Nav',
@@ -26,14 +26,15 @@ export default React.createClass({
 		const nextRoute = nextProps.router.history.location.pathname;
 		if(activeRoute !== nextRoute) {
 			this.setState({
-				activeRoute: nextRoute
+				activeRoute: nextRoute,
+				navMenuOpen: false
 			});
 		}
 	},
 
 	render() {
 		const { activeRoute } = this.state;
-		return(
+		return (
 			<nav className="nav">
 				<div className="container group">
 					<div className="float-left nav-logo margin-small ml">
@@ -45,7 +46,7 @@ export default React.createClass({
 						/>
 						<div 
 							onClick={() => this.setState({navMenuOpen: !this.state.navMenuOpen})}
-							className="show-on-mobile margin-small mr vertical-center-on-mobile">
+							className="show-on-mobile margin-small mr vertical-center-on-mobile pointer">
 							<span 
 							style={{fontSize: '32px'}}
 							className="octicon octicon-three-bars">
@@ -64,6 +65,7 @@ export default React.createClass({
 							className=""
 							activeClass="black bold"
 							idleClass="grey"
+							fontSize="18"
 							handleClick={() => this.setState({navMenuOpen: false})}
 						/>	
 					</div>

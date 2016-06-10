@@ -8,6 +8,7 @@ export default React.createClass({
 		const { links } = this.props;
 		const { activeRoute } = this.props;
 		const { menu } = this.props;
+		const { fontSize } = this.props;
 		return(
 			<ul 
 				className="links up 
@@ -34,7 +35,7 @@ export default React.createClass({
 										menu === 'nav' 
 										&& i === links.length - 1) ? '0.5em' : '')
 								}}
-								className={'padding-small pt pl pb pr font-18' 
+								className={`padding-small pt pl pb pr font-${fontSize}`
 										   + ' ' + (i !== 0 ? 'border bt bg' : '')}>
 								<Link
 									to={to}
