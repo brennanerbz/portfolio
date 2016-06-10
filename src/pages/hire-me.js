@@ -31,7 +31,7 @@ export default React.createClass({
 							<TextInput label={true} name="Name"/>
 							<TextInput label={true} name="Email"/>
 							<TextInput label={true} name="Company"/>
-							<RadioOptionsList 
+						<RadioOptionsList 
 								label={true} 
 								name={options.name} 
 								options={options.list}/>

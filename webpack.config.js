@@ -11,7 +11,7 @@ var config = getConfig({
 	clearBeforeBuild: true,
 	isDev: process.env.NODE_ENV !== 'production',
 	port: 3000,
-	hostname: 'docbrown.local',
+	hostname: '127.0.0.1',
 	html: function (context) {
         return {
             'index.html': context.defaultTemplate()
