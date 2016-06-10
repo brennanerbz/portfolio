@@ -12,12 +12,11 @@ export default React.createClass({
 	},
 
 	componentDidMount() {
-		var self = this;
+		let self = this;
 		let photo = this.props.project.coverPhoto;
 		if(typeof photo === 'string') {
 			let v = new Vibrant(photo);
 			v.getPalette(function(e, palette) {
-				console.log(palette)
 				self.setState({
 					imageColor: palette.Vibrant.rgb
 				});
