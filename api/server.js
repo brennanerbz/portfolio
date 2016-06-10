@@ -7,7 +7,7 @@ var s3 = require('./controllers/s3');
 var project = require('./controllers/project');
 
 var port = process.env.PORT || 8080;
-var mongoUri = process.env.MONGOLAB_URI || 'mongodb://localhost:27017/erbeznik-portfolio';
+var mongoUri = process.env.MONGODB_URI || 'mongodb://localhost:27017/erbeznik-portfolio';
 
 mongoose.connect(mongoUri);
 console.log('Mongoose connected to: ' + mongoUri);
