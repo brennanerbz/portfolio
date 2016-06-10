@@ -1,4 +1,5 @@
 import React  from 'react';
+import app from 'ampersand-app';
 import FileProcess from '../helpers/process-file';
 import axios from 'axios';
 import async from 'async';
@@ -56,7 +57,7 @@ export default React.createClass({
 			markdown:   this.state.markdown
 		}
 		axios
-		.post('http://localhost:5100/api/v1/projects', project)
+		.post(app.apiUrl + '/projects', project)
 		.then(function(result) {
 			console.log(result)
 		})
@@ -85,7 +86,7 @@ export default React.createClass({
 		var self = this;
 		const file = event.name ? event : event.target.files[0];
 		FileProcess(file).then((result) => {
-			axios.put('http://localhost:5100/api/v1/s3', {
+			axios.put(app.apiUrl + '/s3', {
 				file: result,
 				filename: file.name,
 				filetype: file.type

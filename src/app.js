@@ -1,5 +1,6 @@
 import Router from './routes';
 import app from 'ampersand-app';
+import config from './config';
 import icons from 'octicons/octicons/octicons.css';
 
 /* ===============
@@ -22,12 +23,12 @@ require('./styles/form.scss');
 require('./styles/project.scss');
 require('./styles/hire-me.scss');
 
-window.app = app;
-
+// window.app = app;
 app.extend({
 	init() {
 		this.router = new Router();
 		this.router.history.start()
 	}
 })
+app.apiUrl = config.apiUrl;
 app.init();

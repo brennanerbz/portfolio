@@ -83,11 +83,14 @@
     "yeticss": "^7.3.0"
   },
   "scripts": {
-    "lint": "eslint src",
-    "build": "webpack",
-    "deploy": "surge -p public -d labelr.surge.sh",
-    "start": "nf start",
-    "yolo": "git add --all && git commit -am \"$(date)\" && npm version minor && git push origin master --tags && npm run build && npm run deploy"
+    "client": "webpack-dev-server",
+    "api": "nodemon api/server",
+    "start": "webpack-dev-server & nf start",
+    "prebuild": "rm -rf public && mkdir public",
+    "build": "NODE_ENV=production webpack",
+    "surge": "surge -p public -d erbeznik-portfolio.surge.sh",
+    "deploy-client": "npm run build && npm run surge",
+    "deploy-api": "git push origin master"
   },
   "devDependencies": {
     "babel-core": "^6.0.20",

@@ -1,4 +1,5 @@
 import React  from 'react';
+import app from 'ampersand-app';
 import axios from 'axios';
 import CategoryList  from '../components/category-list';
 import CollapsingList  from '../components/collapsing-link-list';
@@ -39,7 +40,7 @@ export default React.createClass({
 	componentDidMount() {
 		var self = this;
 		axios
-		.get('http://localhost:5100/api/v1/projects')
+		.get(app.apiUrl + '/projects')
 		.then(function(result) {
 			self.setState({
 				projects: result.data

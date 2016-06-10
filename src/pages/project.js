@@ -1,4 +1,5 @@
 import React  from 'react';
+import app from 'ampersand-app';
 import axios from 'axios';
 import ProjectHeading from '../components/project-heading';
 import ProjectMarkdown from '../components/project-markdown';
@@ -16,7 +17,7 @@ export default React.createClass({
 		var self = this;
 		var { name } = this.props;
 		axios
-		.get(`http://localhost:5100/api/v1/projects/${name}`)
+		.get(app.apiUrl + `/projects/${name}`)
 		.then(function(result) {
 			console.log(result)
 			self.setState({
