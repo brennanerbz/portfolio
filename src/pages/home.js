@@ -11,8 +11,9 @@ export default React.createClass({
 		return {
 			projects: [],
 			categoryMenuOpen: false,
-			activeCategory: '',
+			activeCategory: 'All',
 			categories: [
+				'All',
 				'Web Design',
 				'Web App Design',
 				'Interaction Design',
@@ -101,7 +102,7 @@ export default React.createClass({
 						{
 							projects
 							.filter((project) => {
-								if(activeCategory) {
+								if(activeCategory !== 'All') {
 									if(project.tags.indexOf(activeCategory) !== -1) return project;
 								} else return project;
 							})
