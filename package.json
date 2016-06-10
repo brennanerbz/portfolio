@@ -52,7 +52,7 @@
     "node-libs-browser": "^1.0.0",
     "node-sass": "^3.7.0",
     "node-uuid": "^1.4.7",
-    "node-vibrant": "git+https://github.com/brennanerbz/node-vibrant.git",
+    "node-vibrant": "^2.1.2",
     "nodemon": "^1.9.2",
     "npm": "^3.9.5",
     "octicons": "^3.5.0",
