@@ -46,7 +46,7 @@ export default React.createClass({
 					this.props.handleChangeRoute(to)
 					
 					this.props.handleClick &&
-					this.props.handleClick()
+					this.props.handleClick(label)
 
 				}}>
 				{label}

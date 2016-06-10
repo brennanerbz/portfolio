@@ -7,6 +7,7 @@ export default React.createClass({
 	render() {
 		const { links } = this.props;
 		const { activeRoute } = this.props;
+		const { activeCategory } = this.props;
 		const { menu } = this.props;
 		const { fontSize } = this.props;
 		return(
@@ -27,6 +28,9 @@ export default React.createClass({
 						} else if (activeRoute === to) {
 							active = true
 						}
+						if(activeCategory) {
+							active = activeCategory === label;
+						}
 						return ( 
 							<li 
 								key={i}
@@ -38,7 +42,7 @@ export default React.createClass({
 								className={`padding-small pt pl pb pr font-${fontSize}`
 										   + ' ' + (i !== 0 ? 'border bt bg' : '')}>
 								<Link
-									to={to}
+									to={menu === 'categories' ? '/' : to}
 									label={label}
 									active={active}
 									activeClass={this.props.activeClass}

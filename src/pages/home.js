@@ -11,6 +11,7 @@ export default React.createClass({
 		return {
 			projects: [],
 			categoryMenuOpen: false,
+			activeCategory: '',
 			categories: [
 				'Web Design',
 				'Web App Design',
@@ -50,6 +51,7 @@ export default React.createClass({
 
 	render() {
 		const { projects } = this.state;
+		const { activeCategory } = this.state;
 		return(
 			<div className="container group">
 				<div className="show-on-mobile">
@@ -67,16 +69,16 @@ export default React.createClass({
 							this.state.categoryMenuOpen
 							&&
 							<CollapsingList
-								activeRoute={null}
+								activeCategory={activeCategory}
 								menu="categories"
 								links={this.state.categories}
 								className=""
 								activeClass="black bold"
 								idleClass="grey"
 								fontSize="16"
-								handleClick={(route) => {
+								handleClick={(category) => {
 									this.setState({
-										activeRoute: route,
+										activeCategory: category,
 										categoryMenuOpen: false
 									})}
 								}
@@ -85,12 +87,25 @@ export default React.createClass({
 					</div>
 				</div>
 				<div className="col span-1-of-4 hide-on-mobile padding-small pl" style={{paddingRight: 0}}>
-					<CategoryList categories={this.state.categories}/>
+					<CategoryList 
+						activeCategory={activeCategory}
+						categories={this.state.categories}
+						handleClick={(category) => {
+							this.setState({
+								activeCategory: category
+							});
+						}}/>
 				</div>
 				<div className="col span-3-of-4 no-padding">
 					<div className="group">
 						{
-							projects.map((project, i) => {
+							projects
+							.filter((project) => {
+								if(activeCategory) {
+									if(project.tags.indexOf(activeCategory) !== -1) return project;
+								} else return project;
+							})
+							.map((project, i) => {
 								return (
 									<Card
 										key={i}

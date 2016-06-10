@@ -7,6 +7,7 @@ import FileInput from '../components/file-input';
 import TextArea from '../components/text-area';
 import MarkdownEditor from '@insidersbyte/react-markdown-editor';
 import ProjectMarkdown from '../components/project-markdown';
+import SelectTagList from '../components/select-tag-list';
 
 export default React.createClass({
 	displayName: 'CreateProject',
@@ -16,10 +17,31 @@ export default React.createClass({
 			date: '', 
 			name: '',
 			slug: '',
+			tags: [],
 			data_uri: null,
 			filename: '',
 			filetype: '',
 			markdown: '',
+			categories: [
+				'Web Design',
+				'Web App Design',
+				'Interaction Design',
+				'Wireframes',
+				'Mobile Web',
+				'iOS Design',
+				'Android Design',
+				'Startup',
+				'Photography',
+				'Videography',
+				'Film',
+				'Music Video',
+				'Commercial',
+				'Front End Development',
+				'Back End Development',
+				'User Experience Design',
+				'Branding',
+				'Mobile Web Design'
+			],
 		}
 	},
 
@@ -29,7 +51,7 @@ export default React.createClass({
 			date: 		this.state.date,
 			name: 		this.state.name,
 			slug: 		this.state.slug,
-			tags: 		this.state.tags.split(',').map((tag) => { return tag.trim(); }),
+			tags: 		this.state.tags,
 			coverPhoto: this.state.data_uri,
 			markdown:   this.state.markdown
 		}
@@ -108,10 +130,17 @@ export default React.createClass({
 									name="Slug"/>
 
 								{/* Tags */}
-								<TextInput 
-									handleChange={(event) => this.setState({tags: event.target.value})}
-									label={true} 
-									name="Tags"/>
+								<SelectTagList
+									categories={this.state.categories}
+									handleClick={(tag) => {
+										const tags = this.state.tags;
+										tags.push(tag);
+										this.setState({
+											tags: tags
+										});
+									}}
+									tags={this.state.tags}
+								/>
 
 								{/* Cover Photo */}
 								<label 
