@@ -8,6 +8,7 @@ exports.postProject = function(req, res) {
 	project.slug 	   = req.body.slug;
 	project.tags 	   = req.body.tags;
 	project.coverPhoto = req.body.coverPhoto;
+	project.color 	   = req.body.color;
 	project.markdown   = req.body.markdown;
 
 	project.save(function(err) {

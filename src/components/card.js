@@ -5,32 +5,9 @@ import Vibrant from 'brennan-node-vibrant';
 export default React.createClass({
 	displayName: 'Card',
 
-	getInitialState() {
-		return {
-			imageColor: ''
-		}		
-	},
-
-	componentDidMount() {
-		let self = this;
-		let photo = this.props.project.coverPhoto;
-		if(typeof photo === 'string') {
-			let v = new Vibrant(photo);
-			v.getPalette(function(e, palette) {
-				self.setState({
-					imageColor: palette.Vibrant.rgb
-				});
-			})	
-		}
-	},
-
 	render() {
 		const { project } = this.props;
-		let { imageColor } = this.state || [];
-		let color = '';
-		if(imageColor) {
-			color = 'rgba(' + imageColor.join(',') + ',100' + ')'
-		}
+		let color = 'rgba(' + project.color.join(',') + ',100' + ')'
 		return(
 			<a 
 				href={`/work/${project.name}`} 

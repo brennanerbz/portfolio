@@ -9,6 +9,7 @@ import TextArea from '../components/text-area';
 import MarkdownEditor from '@insidersbyte/react-markdown-editor';
 import ProjectMarkdown from '../components/project-markdown';
 import SelectTagList from '../components/select-tag-list';
+import Vibrant from 'node-vibrant';
 
 export default React.createClass({
 	displayName: 'CreateProject',
@@ -43,6 +44,7 @@ export default React.createClass({
 				'Branding',
 				'Mobile Web Design'
 			],
+			color: ''
 		}
 	},
 
@@ -54,6 +56,7 @@ export default React.createClass({
 			slug: 		this.state.slug,
 			tags: 		this.state.tags,
 			coverPhoto: this.state.data_uri,
+			color: 		this.state.color,
 			markdown:   this.state.markdown
 		}
 		axios
@@ -86,10 +89,19 @@ export default React.createClass({
 		var self = this;
 		const file = event.name ? event : event.target.files[0];
 		FileProcess(file).then((result) => {
+			// Color
+			let photo = result;
+			let v = new Vibrant(photo);
+			v.getPalette(function(e, palette) {
+				self.setState({
+					color: palette.Vibrant.rgb
+				});
+			})	
+			// Upload to s3
 			axios.put(app.apiUrl + '/s3', {
 				file: result,
 				filename: file.name,
-				filetype: file.type
+				filetype: file.type,
 			}).then(function(result) {
 				if(cb) return cb(result)
 				self.setState({

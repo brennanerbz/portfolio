@@ -6,6 +6,7 @@
  	slug: String,
  	tags: Array,
  	coverPhoto: String,
+ 	color: Array,
  	markdown: String
  });
 

@@ -8,7 +8,7 @@ aws.config.update({
 aws.config.region = 'us-west-2';
 
 exports.uploadFile = function(req, res) {
-
+    
     var file = req.body.file;
     var filename = req.body.filename;
     var filetype = req.body.filetype;
