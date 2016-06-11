@@ -4,6 +4,9 @@ const config = {
 	},
 	'erbeznik-portfolio.surge.sh': {
 		apiUrl: 'https://erbeznik-portfolio.herokuapp.com/api/v1'
+	},
+	'brennanerbeznik.com': {
+		apiUrl: 'https://erbeznik-portfolio.herokuapp.com/api/v1'
 	}
 }[window.location.hostname];
 

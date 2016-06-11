@@ -27,7 +27,7 @@ require('./styles/hire-me.scss');
 app.extend({
 	init() {
 		this.router = new Router();
-		this.router.history.start({pushState: false})
+		this.router.history.start()
 	}
 })
 app.apiUrl = config.apiUrl;

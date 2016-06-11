@@ -22,9 +22,8 @@ export default React.createClass({
 						let to = '/' + link.toLowerCase()
 											.split(' ')
 											.join('-');
-						console.log(to)
 						let active = false;
-						if(to.match(/work/g) && (activeRoute === '' || activeRoute.match(/work/g))) {
+						if(to === '/work' && (activeRoute === '/' || activeRoute.match(/work/g))) {
 							active = true;
 						} else if (activeRoute === to) {
 							active = true
