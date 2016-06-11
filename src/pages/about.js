@@ -45,7 +45,7 @@ export default React.createClass({
 							</div>
 							<div className="about-pics margin-med mt padding-med pl pr group no-padding-on-mobile npl npr">
 								{
-									photos.map(function(photo, i) {
+									false && photos.map(function(photo, i) {
 										return (
 											<a key={i} className="flex-third">
 												<img style={{width: '100%'}} src={photo}/>
