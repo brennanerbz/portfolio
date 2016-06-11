@@ -23,6 +23,7 @@
     "babel-preset-stage-0": "^6.5.0",
     "babel-register": "^6.9.0",
     "body-parser": "^1.15.1",
+    "brennan-node-vibrant": "^2.1.2",
     "concurrent": "^0.3.2",
     "cors": "^2.7.1",
     "css-loader": "^0.23.1",

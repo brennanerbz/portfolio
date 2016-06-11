@@ -1,6 +1,6 @@
 import React  from 'react';
 import ProcessFile from '../helpers/process-file';
-import Vibrant from 'node-vibrant';
+import Vibrant from 'brennan-node-vibrant';
 
 export default React.createClass({
 	displayName: 'Card',
