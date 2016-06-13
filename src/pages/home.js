@@ -107,6 +107,9 @@ export default React.createClass({
 									if(project.tags.indexOf(activeCategory) !== -1) return project;
 								} else return project;
 							})
+							.sort((a, b) => {
+								return Date(a.date) - Date(b.date);
+							})
 							.map((project, i) => {
 								return (
 									<Card
