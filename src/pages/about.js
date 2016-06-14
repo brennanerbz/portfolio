@@ -26,21 +26,22 @@ export default React.createClass({
 								<img style={{width: '100%', borderRadius: '50%'}} src={'https://avatars2.githubusercontent.com/u/9124902?v=3&s=460'}/>
 							</div>
 						</div>
-						<div className="info margin-large mt text-center">
-							<h1 className="name black bold no-margin">Brennan Erbeznik</h1>
-							<h3 className="title grey no-margin">Front End / UX Engineer</h3>
-							<div className="about-bio margin-med mt padding-med pl pr no-padding-on-mobile npl npr">
+						<div className="info margin-large mt">
+							<h1 className="name black bold no-margin text-center">Brennan Erbeznik</h1>
+							<h3 className="title grey no-margin text-center">Front End / UX Engineer</h3>
+							<div className="about-bio margin-med mt padding-large pl pr no-padding-on-mobile npl npr">
 								<p className="about-info">
-									I'm a husband, dad and designer living in Orange County California. You can find me on Dribbble, Twitter, Instagram and LinkedIn if you'd like. I do enjoy taking a good photo or two. I've led design at multiple startups since 2009. 
+									I'm an engineer and designer living in Venice Beach, California. You can find me on Twitter, Instagram and GitHub. I've led front end engineering, user experience and design at multiple startups since 2012. 
+								</p>
+								<p className="about-info">What my resume won't tell you is what I believe, and why I do what I do.</p>
+								<p className="about-info">
+									I believe that there is a world out there, filled with people that undervalued and underutilized. I believe that everyone’s time is valuable, and that no matter where they’re from, what they do, or who they are, everyone has the opportunity to be paid for what they know or what they can do. I believe in bringing people together, and bringing the best out of them to ultimately find the truth and accomplish great things. I believe in creating tools that brings this wonderful world, and the people within it, to each other. 
 								</p>
 								<p className="about-info">
-									I've also had the honor of being named one of the Top 75 Designers in Technology for 2013 (by Business Insider). 
+										I believe technology is the surest and only way to do so. In order for the future to be better, we must work on things that are different, that are new, that haven't been done before. I believe in companies that want to create these entirely new technologies. I believe in companies that are on a mission to enable people to live better, wealthier, happier and more productive lives. I believe in companies that bring a better future to us. 
 								</p>
 								<p className="about-info">
-									I've designed numerous iOS apps that have been selected by Apple as New and Noteworthy with thousands and thousands of 5-star reviews.
-								</p>
-								<p className="about-info">
-									I love design, business strategy and product.
+									Join me.
 								</p>
 							</div>
 							<div className="about-pics margin-med mt padding-med pl pr group no-padding-on-mobile npl npr">
