@@ -55,7 +55,7 @@ export default React.createClass({
 		const { projects } = this.state;
 		const { activeCategory } = this.state;
 		return(
-			<div className="container group">
+			<div className="container group margin-tiny mt no-margin-on-mobile nmt">
 				<div className="show-on-mobile">
 					<div className="card" style={{border: 'none'}}>
 						<div 
@@ -108,7 +108,7 @@ export default React.createClass({
 								} else return project;
 							})
 							.sort((a, b) => {
-								return Date(a.date) - Date(b.date);
+								return new Date(b.date) - new Date(a.date);
 							})
 							.map((project, i) => {
 								return (
