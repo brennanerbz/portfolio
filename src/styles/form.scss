@@ -39,7 +39,8 @@
    MARKDOWN SETTINGS 
    =============== */
 .markdown-editor__textarea {
-	resize: vertical;
+	resize: none;
+  white-space: pre-wrap;
 	min-height: 200px;
 }
 

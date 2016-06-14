@@ -25,6 +25,7 @@ require('./styles/form.scss');
 require('./styles/project.scss');
 require('./styles/hire-me.scss');
 
+
 // window.app = app;
 app.extend({
 	init() {

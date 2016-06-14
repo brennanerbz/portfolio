@@ -33,7 +33,6 @@ exports.getProject  = function(req, res) {
 };
 
 exports.updateProject = function(req, res) {
-	console.log(req)
 	Project.findOneAndUpdate({_id: req.body._id}, req.body.update, function(err, project) {
 		if(err) res.send(err);
 		res.json(project);

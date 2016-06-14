@@ -26,13 +26,17 @@ export default React.createClass({
 				'Photography',
 				'Videography',
 				'Film',
+				'TV',
 				'Music Video',
 				'Commercial',
 				'Front End Development',
 				'Back End Development',
 				'User Experience Design',
 				'Branding',
-				'Mobile Web Design'
+				'Mobile Web Design',
+				'Sockets',
+				'Code',
+				'Design',
 			]
 		}
 	},

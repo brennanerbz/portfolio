@@ -1,7 +1,6 @@
 import React  from 'react';
 import ReactMarkdown from 'react-markdown';
-
-// var input = '# This is a header\n\nAnd this is a paragraph\n\n```code```';
+import CodeBlock from './code-block';
 
 export default React.createClass({
 	displayName: 'ProjectMarkdown',
@@ -11,7 +10,11 @@ export default React.createClass({
 		return(
 			<div className="project-markdown">
 				<div className="markdown-body">
-					<ReactMarkdown source={input}/>
+					<ReactMarkdown 
+						source={input}
+						renderers={Object.assign({}, ReactMarkdown.renderers, {
+							CodeBlock: CodeBlock
+						})}/>
 				</div>
 			</div>
 		);
