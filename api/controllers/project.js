@@ -28,6 +28,14 @@ exports.getProjects = function(req, res) {
 exports.getProject  = function(req, res) {
 	Project.findOne({name: req.params.project_name}, function(err, project) {
 		if(err) res.send(err);
-		res.json(project)
+		res.json(project);
 	})
 };
+
+exports.updateProject = function(req, res) {
+	console.log(req)
+	Project.findOneAndUpdate({_id: req.body._id}, req.body.update, function(err, project) {
+		if(err) res.send(err);
+		res.json(project);
+	})
+}

@@ -18,7 +18,8 @@ export default Router.extend({
 		'work': 'home',
 		'work/:name': 'project',
 		'about': 'about',
-		'hire-me': 'hireMe'
+		'hire-me': 'hireMe',
+		'edit/:name': 'editProject'
 	},
 	renderPage(page, opts = { layout: true }) {
 		if(opts.layout) {
@@ -35,6 +36,9 @@ export default Router.extend({
 	},
 	createProject() {
 		this.renderPage(<CreateProjectPage/>)
+	},
+	editProject(name) {
+		this.renderPage(<CreateProjectPage name={name} editing={true}/>)
 	},
 	project(name) {
 		this.renderPage(<ProjectPage name={name}/>)

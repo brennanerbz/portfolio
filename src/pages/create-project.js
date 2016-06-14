@@ -16,6 +16,7 @@ export default React.createClass({
 
 	getInitialState() {
 		return {
+			_id: '',
 			date: '', 
 			name: '',
 			slug: '',
@@ -48,6 +49,31 @@ export default React.createClass({
 		}
 	},
 
+	componentDidMount() {
+		var { editing, name } = this.props;
+		var self = this;
+		if(editing) {
+			axios
+			.get(app.apiUrl + `/projects/${name}`)
+			.then(function(result) {
+				console.log(result)
+				self.setState({
+					_id: result.data._id,
+					date: result.data.date,
+					name: result.data.name,
+					slug: result.data.slug,
+					tags: result.data.tags,
+					markdown: result.data.markdown,
+					data_uri: result.data.coverPhoto,
+					color: result.data.color
+				});
+			})
+			.catch(function(err) {
+				console.error(err)
+			})
+		}
+	},
+
 	postProject(event) {
 		event.preventDefault();
 		const project = {
@@ -61,6 +87,30 @@ export default React.createClass({
 		}
 		axios
 		.post(app.apiUrl + '/projects', project)
+		.then(function(result) {
+			console.log(result)
+		})
+		.catch(function(err) {
+			console.error(err)
+		})
+	},
+
+	updateProject(event) {
+		event.preventDefault();
+		const project = {
+			_id:     		this.state._id,
+			update: {
+				date: 		this.state.date,
+				name: 		this.state.name,
+				slug: 		this.state.slug,
+				tags: 		this.state.tags,
+				markdown:   this.state.markdown,
+				coverPhoto: this.state.data_uri,
+				color: 		this.state.color
+			}
+		}
+		axios
+		.put(app.apiUrl + '/projects', project)
 		.then(function(result) {
 			console.log(result)
 		})
@@ -127,17 +177,20 @@ export default React.createClass({
 							<form className="hire-form padding-small pr pb pl">
 
 								<TextInput 
+									value={this.state.date}
 									handleChange={(event) => {this.setState({date: event.target.value})}}
 									type="date"
 									label={true} 
 									name="Date"/>
 
 								<TextInput 
+									value={this.state.name}
 									handleChange={(event) => this.setState({name: event.target.value})}
 									label={true} 
 									name="Name"/>
 
 								<TextInput 
+									value={this.state.slug}
 									handleChange={(event) => this.setState({slug: event.target.value})}
 									label={true} 
 									name="Slug"/>
@@ -185,10 +238,10 @@ export default React.createClass({
 								/>
 														
 								<button 
-									onClick={this.postProject}
+									onClick={this.props.editing ? this.updateProject : this.postProject}
 									type="text" 
 									className="button big confirm bold all-caps margin-small mt">
-									Create Project
+									{this.props.editing ? 'Update' : 'Create'} Project
 								</button>
 
 							</form>

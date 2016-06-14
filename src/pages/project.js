@@ -35,12 +35,15 @@ export default React.createClass({
 			<div className="container">
 				<div className="project-content margin-small mt ml mr mb no-margin-on-mobile nmr nml">
 					<div className="project-body padding-med pt pr pb pl">
+						<a href={`/edit/${project.name}`}>Edit</a>
 						<ProjectHeading
 							project={project}
 						/>
-						<ProjectMarkdown
-							input={project.markdown}
-						/>
+						<div className="margin-small mt">
+							<ProjectMarkdown
+								input={project.markdown}
+							/>
+						</div>
 					</div>
 				</div>
 			</div>

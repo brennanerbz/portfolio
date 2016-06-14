@@ -29,7 +29,8 @@ router.route('/s3')
 
 router.route('/projects')
 	.post(project.postProject)
-	.get(project.getProjects);
+	.get(project.getProjects)
+	.put(project.updateProject);
 
 router.route('/projects/:project_name')
 	.get(project.getProject)

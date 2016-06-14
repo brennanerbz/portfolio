@@ -5,6 +5,8 @@ var path = require('path');
 var getConfig = require('hjs-webpack');
 var React = require('react');
 
+// var jquery = '<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>'
+
 var config = getConfig({
 	in: 'src/app.js',
 	out: 'public',

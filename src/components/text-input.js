@@ -17,6 +17,7 @@ export default React.createClass({
 					</label>
 				}
 				<input 
+					value={this.props.value}
 					onChange={this.props.handleChange}
 					required
 					type={this.props.type || 'text'}

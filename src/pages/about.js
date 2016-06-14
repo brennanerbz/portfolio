@@ -35,7 +35,7 @@ export default React.createClass({
 								</p>
 								<p className="about-info">What my resume won't tell you is what I believe, and why I do what I do.</p>
 								<p className="about-info">
-									I believe that there is a world out there, filled with people that undervalued and underutilized. I believe that everyone’s time is valuable, and that no matter where they’re from, what they do, or who they are, everyone has the opportunity to be paid for what they know or what they can do. I believe in bringing people together, and bringing the best out of them to ultimately find the truth and accomplish great things. I believe in creating tools that brings this wonderful world, and the people within it, to each other. 
+									I believe that there is a world out there, filled with people that undervalued and underutilized. I believe that everyone’s time is valuable, and that no matter where they’re from, what they do, or who they are, everyone has the opportunity to be paid for what they know or what they can do. I believe in bringing people together, and bringing the best out of them to ultimately find the truth and accomplish great things. I believe in creating tools that bring this wonderful world, and the people within it, to each other. 
 								</p>
 								<p className="about-info">
 										I believe technology is the surest and only way to do so. In order for the future to be better, we must work on things that are different, that are new, that haven't been done before. I believe in companies that want to create these entirely new technologies. I believe in companies that are on a mission to enable people to live better, wealthier, happier and more productive lives. I believe in companies that bring a better future to us. 
