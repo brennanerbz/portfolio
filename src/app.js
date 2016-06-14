@@ -3,6 +3,8 @@ import app from 'ampersand-app';
 import config from './config';
 import icons from 'octicons/octicons/octicons.css';
 
+require('file?name=favicon.ico!./images/favicon.ico');
+
 /* ===============
    STYLES
    =============== */
