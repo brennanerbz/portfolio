@@ -24,6 +24,7 @@ require('./styles/button.scss');
 require('./styles/form.scss');
 require('./styles/project.scss');
 require('./styles/hire-me.scss');
+require('./styles/highlight-eighties.css');
 
 
 // window.app = app;

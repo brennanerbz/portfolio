@@ -19,7 +19,6 @@ export default React.createClass({
 		axios
 		.get(app.apiUrl + `/projects/${name}`)
 		.then(function(result) {
-			console.log(result)
 			self.setState({
 				project: result.data
 			});
@@ -34,8 +33,7 @@ export default React.createClass({
 		return(
 			<div className="container">
 				<div className="project-content margin-small mt ml mr mb no-margin-on-mobile nmr nml">
-					<div className="project-body padding-med pt pr pb pl">
-						<a href={`/edit/${project.name}`}>Edit</a>
+					<div className="project-body padding-med pt pr pb pl small-padding-on-mobile smpt smpr smpb smpl">
 						<div className="padding-small pb border bbs bg">
 							<ProjectHeading
 								project={project}
@@ -50,3 +48,4 @@ export default React.createClass({
 		);
 	}
 });
+//						<a href={`/edit/${project.name}`}>Edit</a>

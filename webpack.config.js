@@ -19,7 +19,7 @@ var config = getConfig({
 	hostname: '127.0.0.1',
 	html: function (context) {
         return {
-        	'200.html': context.defaultTemplate(),
+        	'200.html': context.defaultTemplate({head: highlight}),
             'index.html': context.defaultTemplate({head: highlight})
         };
     }

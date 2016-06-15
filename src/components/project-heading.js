@@ -10,9 +10,8 @@ export default React.createClass({
 			<div className="project-heading">
 				<p className="project-meta all-caps">
 					<span className="project-date grey">
-						{moment(project.date).format('ll')} |
+						{moment(project.date).format('ll')} 
 					</span>
-					<span className="reading-time red">&nbsp;3 min</span>
 				</p>
 				<h1 className="project-title block black bold">
 					{project.name}
@@ -24,3 +23,5 @@ export default React.createClass({
 		);
 	}
 });
+
+//<span className="reading-time red">&nbsp;3 min</span>

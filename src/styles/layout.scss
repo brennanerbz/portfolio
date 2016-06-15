@@ -294,6 +294,22 @@
 		}
 	}
 }
+.small-padding-on-mobile {
+	@media screen and (max-width: 748px) {
+		&.smpl {
+			padding-left: 1em;
+		}
+		&.smpr {
+			padding-right: 1em;
+		}
+		&.smpt {
+			padding-top: 1em;
+		}
+		&.smpb {
+			padding-bottom: 1em;
+		}
+	}
+}
 .display-block-on-mobile {
 	@media screen and (max-width: 748px) {
 		display: block;
